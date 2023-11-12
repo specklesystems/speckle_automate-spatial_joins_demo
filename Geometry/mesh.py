@@ -1,4 +1,4 @@
-from typing import Tuple, Optional
+from typing import Optional, Tuple
 
 import numpy as np
 import trimesh
@@ -10,8 +10,7 @@ from trimesh import Trimesh
 
 class Element:
     def __init__(self, id, meshes):
-        """
-        Initialize an Element object with an ID and a list of meshes.
+        """Initialize an Element object with an ID and a list of meshes.
 
         Args:
         id (str): The ID of the Element.
@@ -22,8 +21,7 @@ class Element:
 
 
 def speckle_transform_to_trimesh_matrix(transform: Transform) -> np.ndarray:
-    """
-    Convert the Speckle Transform matrix to a NumPy array format suitable for trimesh.
+    """Convert the Speckle Transform matrix to a NumPy array format suitable for trimesh.
 
     Returns:
         np.ndarray: 4x4 transformation matrix in NumPy array format.
@@ -34,8 +32,7 @@ def speckle_transform_to_trimesh_matrix(transform: Transform) -> np.ndarray:
 def speckle_to_element(
     base_with_transforms: Tuple[Base, str, Optional[Transform]]
 ) -> Element:
-    """
-    Convert a SpecklePy Base object and its associated Transform to an Element object.
+    """Convert a SpecklePy Base object and its associated Transform to an Element object.
 
     Args:
         base_with_transforms (tuple): Contains a SpecklePy Base object and its
@@ -44,7 +41,6 @@ def speckle_to_element(
     Returns:
         Element: The resulting Element object.
     """
-
     # Unpack the tuple to get the base, speckle ID, and transform.
     base, speckle_id, transform = base_with_transforms
 
@@ -78,8 +74,7 @@ def speckle_to_element(
 
 
 def speckle_to_trimesh(speckle_mesh: SpeckleMesh) -> Trimesh:
-    """
-    Convert a SpecklePy Mesh to a trimesh Mesh object.
+    """Convert a SpecklePy Mesh to a trimesh Mesh object.
 
     Args:
         speckle_mesh: The SpecklePy Mesh to convert.
@@ -87,7 +82,6 @@ def speckle_to_trimesh(speckle_mesh: SpeckleMesh) -> Trimesh:
     Returns:
         trimesh.Trimesh: The resulting trimesh Mesh object.
     """
-
     # Convert the list of vertices to a numpy array. Reshape it to
     # (num_vertices, 3) to fit the trimesh format.
     vertices_array = np.array(speckle_mesh.vertices).reshape((-1, 3))

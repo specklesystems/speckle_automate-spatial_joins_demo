@@ -1,9 +1,8 @@
 """Helper module for a simple speckle object tree flattening."""
-from typing import Tuple, Optional, List
+from typing import List, Optional, Tuple
 
 from specklepy.objects import Base
 from specklepy.objects.other import Instance, Transform
-
 
 # def flatten_base(base: Base) -> Iterable[Base]:
 #     """Take a base and flatten it to an iterable of bases."""
@@ -18,8 +17,7 @@ def extract_base_and_transform(
     inherited_instance_id: Optional[str] = None,
     transform_list: Optional[List[Transform]] = None,
 ) -> Tuple[Base, str, Optional[List[Transform]]]:
-    """
-    Traverses Speckle object hierarchies to yield `Base` objects and their transformations.
+    """Traverses Speckle object hierarchies to yield `Base` objects and their transformations.
     Tailored to Speckle's AEC data structures, it covers the newer hierarchical structures
     with Collections and also  with patterns found in older Revit specific data.
 

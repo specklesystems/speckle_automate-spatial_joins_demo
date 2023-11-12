@@ -3,7 +3,6 @@ from typing import Callable, List, Union
 
 from specklepy.objects import Base
 
-
 # We're going to define a set of rules that will allow us to filter and
 # process parameters in our Speckle objects. These rules will be encapsulated
 # in a class called `ParameterRules`.
@@ -38,7 +37,6 @@ class ElementCheckRules:
         desired_type: Union[str, List[str]]
     ) -> Callable[[Base], bool]:
         """Rule: Check if a parameter's speckle_type matches the desired type."""
-
         # Convert single string to list for consistent handling
         if isinstance(desired_type, str):
             desired_type = [desired_type]
