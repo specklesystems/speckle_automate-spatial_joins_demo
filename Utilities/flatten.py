@@ -1,15 +1,15 @@
 """Helper module for a simple speckle object tree flattening."""
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Iterable
 
 from specklepy.objects import Base
 from specklepy.objects.other import Instance, Transform
 
-# def flatten_base(base: Base) -> Iterable[Base]:
-#     """Take a base and flatten it to an iterable of bases."""
-#     if hasattr(base, "elements") and base["elements"] is not None:
-#         for element in base["elements"]:
-#             yield from flatten_base(element)
-#     yield base
+def flatten_base(base: Base) -> Iterable[Base]:
+    """Take a base and flatten it to an iterable of bases."""
+    if hasattr(base, "elements") and base["elements"] is not None:
+        for element in base["elements"]:
+            yield from flatten_base(element)
+    yield base
 
 
 def extract_base_and_transform(
