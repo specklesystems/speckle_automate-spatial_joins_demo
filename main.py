@@ -10,7 +10,7 @@ from speckle_automate import (
     execute_automate_function,
 )
 
-from flatten import flatten_base
+from Utilities.flatten import flatten_base
 
 
 class FunctionInputs(AutomateBase):
