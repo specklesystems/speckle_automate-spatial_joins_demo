@@ -1,4 +1,5 @@
 import pymesh
+import numpy as np
 
 vertices = [
     [0, 0, 0],
