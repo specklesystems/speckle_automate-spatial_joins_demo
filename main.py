@@ -14,20 +14,21 @@ from Utilities.flatten import flatten_base
 
 
 class FunctionInputs(AutomateBase):
-    """These are function author defined values.
+#     """These are function author defined values.
 
-    Automate will make sure to supply them matching the types specified here.
-    Please use the pydantic model schema to define your inputs:
-    https://docs.pydantic.dev/latest/usage/models/
-    """
+#     Automate will make sure to supply them matching the types specified here.
+#     Please use the pydantic model schema to define your inputs:
+#     https://docs.pydantic.dev/latest/usage/models/
+#     """
 
-    forbidden_speckle_type: str = Field(
-        title="Forbidden speckle type",
-        description=(
-            "If a object has the following speckle_type,"
-            " it will be marked with an error."
-        ),
-    )
+#     forbidden_speckle_type: str = Field(
+#         title="Forbidden speckle type",
+#         description=(
+    #         "If a object has the following speckle_type,"
+    #         " it will be marked with an error."
+    #     ),
+    # )
+    pass
 
 
 def automate_function(
@@ -87,7 +88,7 @@ def automate_function_without_inputs(automate_context: AutomationContext) -> Non
      besides what the automation context provides,
      the inputs argument can be omitted.
     """
-    pass
+    automate_context.mark_run_success("Data Augmetation Complete.")
 
 
 # make sure to call the function with the executor
@@ -95,7 +96,7 @@ if __name__ == "__main__":
     # NOTE: always pass in the automate function by its reference, do not invoke it!
 
     # pass in the function reference with the inputs schema to the executor
-    execute_automate_function(automate_function, FunctionInputs)
+    execute_automate_function(automate_function_without_inputs)
 
     # if the function has no arguments, the executor can handle it like so
     # execute_automate_function(automate_function_without_inputs)
