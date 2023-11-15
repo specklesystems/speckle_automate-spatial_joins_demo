@@ -11,9 +11,9 @@ The Spatial Joins function in Speckle Automate is a versatile tool that demonstr
 ## The Concept: Many Truths, Single Repositories
 "Many Truths" in single repositories is a more nuanced approach in AEC data management than the traditional "Single Source of Truth". This function demonstrates Speckle's superpower in spatially managing and cross-referencing diverse data sets, which is essential in the context of a Project Life Cycle, Construction Management, IoT, Smart Buildings, and Digital Twins.
 
-<img width="250" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/7233e658-bc51-406c-9500-fcc1ac77928a">
-<img width="250" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/8cde7d52-c99c-4948-8117-900f9f18138e">
-<img width="250" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/c04b372d-6794-4eaa-b7e7-5581c3bfaa29">
+<img height="250" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/7233e658-bc51-406c-9500-fcc1ac77928a">
+<img height="250" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/8cde7d52-c99c-4948-8117-900f9f18138e">
+<img height="250" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/c04b372d-6794-4eaa-b7e7-5581c3bfaa29">
 
 ### How It Works
 The Spatial Joins function allows for:
