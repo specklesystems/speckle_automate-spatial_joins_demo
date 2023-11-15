@@ -1,100 +1,47 @@
-# Speckle Automate function template - Python
+[![build and deploy Speckle functions](https://github.com/specklesystems/speckle_automate-spatial_joins/actions/workflows/main.yml/badge.svg)](https://github.com/specklesystems/speckle_automate-spatial_joins/actions/workflows/main.yml)
 
-This is a template repository for a Speckle Automate functions written in python
-using the [specklepy](https://pypi.org/project/specklepy/) SDK to interact with Speckle data.
+# Speckle Automate Function: Spatial Joins
 
-This template contains the full scaffolding required to publish a function to the automate environment.
-Also has some sane defaults for a development environment setups.
+## Overview
+The Spatial Joins function in Speckle Automate is a versatile tool that demonstrates advanced spatial data integration in the AEC industry. It showcases Speckle's capability to manage multiple truths within single repositories, enabling dynamic spatial cross-referencing and integration of data, paving the way for applications in IoT, Smart Buildings, and Digital Twins.
 
-## Getting started
+## ⚠️ Disclaimer: Conceptual Demonstration Only
+**IMPORTANT: This repository contains a conceptual demonstration of the Spatial Joins function and is not intended for production use. It illustrates Speckle's advanced spatial data handling and its applications in emerging technology areas.**
 
-1. Use this template repository to create a new repository in your own / organization's profile.
+## The Concept: Many Truths, Single Repositories
+"Many Truths" in single repositories is a more nuanced approach in AEC data management than the traditional "Single Source of Truth". This function demonstrates Speckle's superpower in spatially managing and cross-referencing diverse data sets, which is essential in the context of a Project Life Cycle, Construction Management, IoT, Smart Buildings, and Digital Twins.
 
-Register the function 
+<img width="295" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/7233e658-bc51-406c-9500-fcc1ac77928a">
+<img width="295" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/8cde7d52-c99c-4948-8117-900f9f18138e">
+<img width="311" alt="image" src="https://github.com/specklesystems/speckle-automate-spatial-joins-demo/assets/760691/c04b372d-6794-4eaa-b7e7-5581c3bfaa29">
 
-### Add new dependencies
+### How It Works
+The Spatial Joins function allows for:
+- **Spatial Cross-Referencing:** Models inherit data from other models based on spatial relationships.
+- **Handling Multiple Truths:** Different models represent various aspects of truth within a single repository.
+- **Dynamic Data Integration:** Integrates data from different models based on their spatial context.
 
-To add new python package dependencies to the project, use:
-`$ poetry add pandas`
+### Expanding into IoT, Smart Buildings, and Digital Twins
+- **IoT Integration:** Enables real-time data flow from IoT devices to be spatially integrated into building models.
+- **Smart Building Applications:** Facilitates the management of building operations and energy efficiency through spatial data analysis.
+- **Digital Twins Development:** Supports the creation of digital twins by merging physical and digital world data, enhancing predictive analytics and maintenance.
 
-### Change launch variables
+### Potential Use Cases
+- **Enhanced Data Enrichment:** Combining strategic-level data with detailed models for comprehensive insights.
+- **Efficient Project Management:** Streamlining integration of various data sets in planning and execution.
+- **Informed Decision Making:** Providing insights by combining data from disparate sources.
 
-describe how the launch.json should be edited
+## Getting Started
+1. **Clone the Repository**: Set up this repository in your environment.
+2. **Explore the Concept**: Understand spatial joins and their application in Speckle.
+3. **Contribute Ideas**: Discuss and contribute ideas for real-world applications.
 
-### Github Codespaces
+## Contributing
+We welcome contributions, ideas, and discussions related to spatial data integration, IoT, Smart Buildings, and Digital Twins in Speckle Automate. Feel free to open issues or submit pull requests.
 
-Create a new repo from this template, and use the create new code.
+## Contact
+For more information or inquiries, please contact [Contact Information].
 
-### Using this Speckle Function
+---
 
-1. [Create](https://automate.speckle.dev/) a new Speckle Automation.
-1. Select your Speckle Project and Speckle Model.
-1. Select the existing Speckle Function named [`Random comment on IFC beam`](https://automate.speckle.dev/functions/e110be8fad).
-1. Enter a phrase to use in the comment.
-1. Click `Create Automation`.
-
-## Getting Started with creating your own Speckle Function
-
-1. [Register](https://automate.speckle.dev/) your Function with [Speckle Automate](https://automate.speckle.dev/) and select the Python template.
-1. A new repository will be created in your GitHub account.
-1. Make changes to your Function in `main.py`. See below for the Developer Requirements, and instructions on how to test.
-1. To create a new version of your Function, create a new [GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) in your repository.
-
-## Developer Requirements
-
-1. Install the following:
-    - [Python 3](https://www.python.org/downloads/)
-    - [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
-1. Run `poetry shell && poetry install` to install the required Python packages.
-
-## Building and Testing
-
-The code can be tested locally by running `poetry run pytest`.
-
-### Building and running the Docker Container Image
-
-Running and testing your code on your own machine is a great way to develop your Function; the following instructions are a bit more in-depth and only required if you are having issues with your Function in GitHub Actions or on Speckle Automate.
-
-#### Building the Docker Container Image
-
-Your code is packaged by the GitHub Action into the format required by Speckle Automate. This is done by building a Docker Image, which is then run by Speckle Automate. You can attempt to build the Docker Image yourself to test the building process locally.
-
-To build the Docker Container Image, you will need to have [Docker](https://docs.docker.com/get-docker/) installed.
-
-Once you have Docker running on your local machine:
-
-1. Open a terminal
-1. Navigate to the directory in which you cloned this repository
-1. Run the following command:
-
-    ```bash
-    docker build -f ./Dockerfile -t speckle_automate_python_example .
-    ```
-
-#### Running the Docker Container Image
-
-Once the image has been built by the GitHub Action, it is sent to Speckle Automate. When Speckle Automate runs your Function as part of an Automation, it will run the Docker Container Image. You can test that your Docker Container Image runs correctly by running it locally.
-
-1. To then run the Docker Container Image, run the following command:
-
-    ```bash
-    docker run --rm speckle_automate_python_example \
-    python -u main.py run \
-    '{"projectId": "1234", "modelId": "1234", "branchName": "myBranch", "versionId": "1234", "speckleServerUrl": "https://speckle.xyz", "automationId": "1234", "automationRevisionId": "1234", "automationRunId": "1234", "functionId": "1234", "functionName": "my function", "functionLogo": "base64EncodedPng"}' \
-    '{}' \
-    yourSpeckleServerAuthenticationToken
-    ```
-
-Let's explain this in more detail:
-
-`docker run --rm speckle_automate_python_example` tells Docker to run the Docker Container Image that we built earlier. `speckle_automate_python_example` is the name of the Docker Container Image that we built earlier. The `--rm` flag tells docker to remove the container after it has finished running, this frees up space on your machine.
-
-The line `python -u main.py run` is the command that is run inside the Docker Container Image. The rest of the command is the arguments that are passed to the command. The arguments are:
-
-- `'{"projectId": "1234", "modelId": "1234", "branchName": "myBranch", "versionId": "1234", "speckleServerUrl": "https://speckle.xyz", "automationId": "1234", "automationRevisionId": "1234", "automationRunId": "1234", "functionId": "1234", "functionName": "my function", "functionLogo": "base64EncodedPng"}'` - the metadata that describes the automation and the function.
-- `{}` - the input parameters for the function that the Automation creator is able to set. Here they are blank, but you can add your own parameters to test your function.
-- `yourSpeckleServerAuthenticationToken` - the authentication token for the Speckle Server that the Automation can connect to. This is required to be able to interact with the Speckle Server, for example to get data from the Model.
-
-## Resources
-
-- [Learn](https://speckle.guide/dev/python.html) more about SpecklePy, and interacting with Speckle from Python.
+**Reminder:** This repository is for demonstration purposes, showcasing Speckle's capabilities in spatial joins and the management of 'Many Truths' in single repositories with potential applications in IoT, Smart Buildings, and Digital Twins.
